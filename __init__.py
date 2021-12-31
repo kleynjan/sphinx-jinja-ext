@@ -1,9 +1,9 @@
 """
-    q_extensions
-    ~~~~~~~~~~~~
+    sphinx-jinja-ext
+    ~~~~~~~~~~~~~~~~
 
-    Sphinx extensions.
+    Collection of extensions to use docs created by Sphinx as Jinja templates.
 
     :copyright: Copyright 2021 by Peter Kleynjan
-    :license: MIT
+    :license: BSD
 """
