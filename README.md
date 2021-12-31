@@ -11,7 +11,7 @@ Use case for this specific extension: use documents produced by Sphinx as Jinja 
 that get rendered by a Flask application. For this, we need a directive that translates into "{{ var1 var2 }}" blocks in our html output.
 Note: this is completely independent of the *internal* use of Jinja by Sphinx.
 
-## Installation
+## How to install and use 'as is'
 
 ### Install Sphinx and create a project 
 
@@ -97,9 +97,15 @@ Create a new markdown file named index2.md:
 ~~~~
 Run make build again and examine the resulting index2.html.
 
-### Finally
+## Next steps
 
-**Tip.** If you need to debug the steps from RST/MD to docutils to HTML, I've found it useful to examine the generated intermediate docutils nodes. The included script is just a wrapper, it 
+### Creating your own directives, nodes & html mapping
+
+The source code is heavily commented, hope that helps you to 'bend' Sphinx to your specific requirements.
+
+## Finally
+
+If you need to debug the steps from RST/MD to docutils to HTML, I've found it useful to examine the generated intermediate docutils nodes. The included script is just a wrapper, it 
 unpickles the doctree and generates pretty xml:
 ~~~~
   cd sphinx-jinja-ext
