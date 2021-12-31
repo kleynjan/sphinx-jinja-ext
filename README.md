@@ -20,9 +20,7 @@ We use this extension ourselves in a Flask SaaS app, which renders Sphinx docume
 adding dynamic, customer-specific content to it. 
 
 **Note:** This extension is completely independent of the *internal* use of Jinja by Sphinx. If instead of {{...}}, you want to 
-modify this extension to produce [[[...]]] or \<myowntag>...\</myowntag> in your html, you can. 
-
-In general terms, this extension can be used as a starting point for your own extension/directive:
+modify this extension to produce [[[...]]] or \<myowntag>...\</myowntag> in your html, you can. The code shows you:
 1. How to define a new RST directive and add it to Sphinx.
 1. Given that directive, how to define and generate a new docutils node from it.
 1. Finally, how to produce HTML output from this docutils node.
