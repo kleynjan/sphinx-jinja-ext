@@ -1,4 +1,4 @@
-# Minimal Sphinx extension: embed Jinja expressions in Sphinx-generated HTML
+# Minimal Sphinx extension: embed Jinja expressions in RST/MyST documents
 In general terms, this extension shows:
 1. How to define an new RST directive and add it to Sphinx.
 1. Given that directive, how to define and generate a new docutils node from it.
