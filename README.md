@@ -119,8 +119,8 @@ The source code is heavily commented, hope that helps you to 'bend' Sphinx to yo
 
 ## Finally
 
-If you need to debug the steps from RST/MD to docutils to HTML, I've found it useful to examine the generated intermediate docutils nodes. The included script is just a wrapper, it 
-unpickles the doctree and generates pretty xml:
+If you need to debug the steps from RST/MD to doctree to HTML, I've found it useful to examine the generated intermediate doctree nodes. 
+The included dt2xml.py script is just a wrapper, it unpickles the doctree and generates pretty xml:
 ~~~~
   cd sphinx-jinja-ext
   chmod +x dt2xml.py
