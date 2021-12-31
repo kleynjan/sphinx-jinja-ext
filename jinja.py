@@ -9,7 +9,7 @@ from sphinx.writers.html import HTMLTranslator
 from sphinx.writers.latex import LaTeXTranslator
 
 ####################### PART I: RST/DOCUTILS SIDE #######################
-#
+
 
 class jinja_div_node(nodes.General, nodes.Element):
     pass
@@ -56,7 +56,7 @@ class JinjaDiv(RST.Directive):
 
 
 ####################### PART II: SPHINX/HTML SIDE #######################
-#
+
 
 def visit_jinja_div(self: HTMLTranslator, node: jinja_div_node) -> None:
     """
@@ -93,6 +93,7 @@ def latex_depart_jinja_div(self: LaTeXTranslator, node: jinja_div_node) -> None:
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
+    """ Add new doctree node definition to Sphinx, then add html & latex translators for that node. """ 
     app.add_node(jinja_div_node,
                  html=(visit_jinja_div, depart_jinja_div),
                  latex=(latex_visit_jinja_div, latex_depart_jinja_div),
@@ -104,6 +105,4 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 
     return {
         'version': sphinx.__display_version__,
-        'env_version': 2,
-        'parallel_read_safe': True
     }
