@@ -118,7 +118,7 @@ Open up ../_build/doctrees/index.xml and you'll see the doctree nodes:
   <jinja_div_node classes="jinja\ jj_class" ids="203923">
       <paragraph>var1 var2</paragraph>
   </jinja_div_node>
-  <paragraph>And this concludes our jinja show for today.
+  <paragraph>And this concludes our jinja show for today.</paragraph>
 ~~~~
 
 Hope this helps. A big thank you to the [Executable Book Project](https://executablebooks.org) for their excellent tools and
