@@ -1,10 +1,6 @@
 # Directive to add Jinja expressions to RST/MyST documents
-In general terms, this extension shows:
-1. How to define an new RST directive and add it to Sphinx.
-1. Given that directive, how to define and generate a new docutils node from it.
-1. Finally, how to produce HTML output from this docutils node.
 
-The extension adds a jinja_div directive to your rST:
+This extension adds a jinja_div directive to your rST:
 ~~~~
 .. jinja_div:: 203923
    :class: jj_class
@@ -20,11 +16,16 @@ Resulting in this HTML:
 ~~~~
 The id argument and class option are both optional. 
 
-We use this to render Sphinx documents as Jinja templates in our Flask application, 
+We use this extension ourselves in a Flask SaaS app, which renders Sphinx documents as Jinja templates,
 adding dynamic, customer-specific content to it. 
 
-**Note:** this is completely independent of the *internal* use of Jinja by Sphinx. If instead of {{...}}, you want to produce [[[...]]] or 
+**Note:** This is completely independent of the *internal* use of Jinja by Sphinx. If instead of {{...}}, you want to produce [[[...]]] or 
 \<myowntag>...\</myowntag> in your html, you can. 
+
+In general terms, this extension can be used as a starting point for your own extension/directive:
+1. How to define a new RST directive and add it to Sphinx.
+1. Given that directive, how to define and generate a new docutils node from it.
+1. Finally, how to produce HTML output from this docutils node.
 
 ## How to install and use 'as is'
 
