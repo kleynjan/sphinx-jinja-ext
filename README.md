@@ -1,15 +1,30 @@
-# Minimal Sphinx extension: adds Jinja expressions to RST/MyST documents
+# Directive to add Jinja expressions to RST/MyST documents
 In general terms, this extension shows:
 1. How to define an new RST directive and add it to Sphinx.
 1. Given that directive, how to define and generate a new docutils node from it.
 1. Finally, how to produce HTML output from this docutils node.
 
-Rationale: documented examples elsewhere (eg, the todo/todolist example in sphinx.ext) have more functional depth, but also more dependencies on other parts of the 
-Sphinx ecosystem (eg, admonition, container). I couldn't find a real **minimal** example, so I hope this serves as one.
+The extension adds a jinja_div directive to your rST:
+~~~~
+.. jinja_div:: 203923
+   :class: jj_class
 
-Use case for this specific extension: use documents produced by Sphinx as Jinja templates 
-that get rendered by a Flask application. For this, we need a directive that translates into "{{ var1 var2 }}" blocks in our html output.
-Note: this is completely independent of the *internal* use of Jinja by Sphinx.
+   var1 var2
+
+~~~~
+Resulting in this HTML:
+~~~~
+<div class="jinja jj_class" id="203923">
+  {{ var1 var2 }}
+</div>
+~~~~
+The id argument and class option are both optional. 
+
+We use this to render Sphinx documents as Jinja templates in our Flask application, 
+adding dynamic, customer-specific content to it. 
+
+**Note:** this is completely independent of the *internal* use of Jinja by Sphinx. If instead of {{...}}, you want to produce [[[...]]] or 
+\<myowntag>...\</myowntag> in your html, you can. 
 
 ## How to install and use 'as is'
 
