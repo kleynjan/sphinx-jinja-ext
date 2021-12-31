@@ -15,13 +15,13 @@ Note: this is completely independent of the *internal* use of Jinja by Sphinx.
 
 ### Install Sphinx and create a project 
 
-1. Create a fresh python environment
+Create a fresh python environment
 ~~~~
   conda create -n jinja_ext python
   conda activate jinja_ext
 ~~~~
 
-1. Install sphinx as per the [Sphinx Getting Started](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html):
+Install sphinx as per the [Sphinx Getting Started](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html):
 ~~~~
   pip install sphinx
 
@@ -35,7 +35,9 @@ Note: this is completely independent of the *internal* use of Jinja by Sphinx.
 ~~~~
 You should now have a Sphinx-generated html file in the _build/html directory.
 
-1. Install the extension (also see [Sphinx extensions docs](https://www.sphinx-doc.org/en/master/usage/extensions/index.html#where-to-put-your-own-extensions) )
+### Install and test extension
+
+Install the extension (also see [Sphinx extensions docs](https://www.sphinx-doc.org/en/master/usage/extensions/index.html#where-to-put-your-own-extensions) )
 ~~~~
   # assuming you're still in myproj/docs
   git clone https://github.com/kleynjan/sphinx-jinja-ext.git
@@ -46,7 +48,7 @@ You should now have a Sphinx-generated html file in the _build/html directory.
   extensions = ['jinja']
   ~~~~
 
-1. Add a jinja_div directive to the index.rst source file, for instance below the ..toctree:
+Add a jinja_div directive to the index.rst source file, for instance below the ..toctree:
 ~~~~
   [...toctree stuff...]
 
@@ -61,7 +63,7 @@ You should now have a Sphinx-generated html file in the _build/html directory.
   Resuming normal programming now!
 ~~~~
 
-1. Make html & look at the results
+Make html & look at the results
 ~~~~
   make clean
   make html
@@ -73,7 +75,8 @@ In the generated index.html in the _build/html directory, the div element has be
   </div>
 ~~~~
 
-1. *Bonus*: Markdown syntax (see [MyST install](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html#using-markdown-with-sphinx) )
+### **Bonus**: Markdown syntax
+Also see [MyST install](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html#using-markdown-with-sphinx)
 ~~~~
   pip install myst-parser
   # and in config.py:
@@ -93,6 +96,8 @@ Create a new markdown file named index2.md:
   Paragraph after the div.
 ~~~~
 Run make build again and examine the resulting index2.html.
+
+### Finally
 
 **Tip.** If you need to debug the steps from RST/MD to docutils to HTML, I've found it useful to examine the generated intermediate docutils nodes. The included script is just a wrapper, it 
 unpickles the doctree and generates pretty xml:
